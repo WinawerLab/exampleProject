@@ -1,36 +1,39 @@
-# exampleProject
-A demo repository, showing an example directory layout, best practices for managing files,
-and a few tricks for keeping your project organization sane and manageable
+# Example Project
 
-# Caveat
-The point of this example is to help you preserve your sanity. If any of these ideas are more burdensome than sanity-inducing, or if you have a better way you like to do things, then you know best! If you have a good idea, maybe consider contributing it here =)
+This is a demo repository, showing an example directory layout, best practices
+for managing files, and a few tricks for keeping your project
+organization sane and manageable. The following sections demonstrate best practices for writing and styling a README, as though this were a real project.
 
-# Suggestion 1: store code, data, and figures in separate directories
+# Summary
 
-TODO git
+ExampleProject is a simulated contrast perception study.
 
-TODO .gitignores
+Simulated subjects were shown random noise at different contrasts. Subjects responded with a numerical measure of perceived contrast. Behavioral responses are fit with an exponential nonlinear model, with a gain and an exponent. The fit model parameters are saved.
 
-TODO what counts as 'data'? 
+# Project Page on WinawerLab wiki
 
-TODO sort your code into subfolders however makes sense to you. Keeping top-level analysis scripts away from low-level constructors is helpful
+The following wiki page is the companion to this repository: https://wikis.nyu.edu/display/winawerlab/Coding+Style+and+Organization
 
-# Suggestion 2: Use relative paths with a "rootpath" script
+# How to run this code
 
-TODO 
- 
-# Suggestion 3: Keep metadata attached to data whenever possible
+In the code/analysis directory, run exampleAnalysis.m. This will automatically generate all necessary input and output data files.
 
-stimuli.mat that is just the stimuli, versus stimuli.mat that records how they were generated etc.
+# Code organization
 
-# Suggestion 4: Organize figures by date
+  * Code directory:
+     * analysis - top-level analysis scripts, organized by date
+     * models - definitions of different models that can to be fit to behavioral data
+     * stimulusgen - code for generating images to be used as experimental stimuli (and also for generating simulated responses)
+  * Data directory:
+     * NOTE: Data files in this directory are generally MATLAB structs which contain metadata about their origin.
+     * modelfits - saved parameters from model fits, organized by date the model fit was run.
+     * responses - experimental responses, organized by date of experiment
+     * stimuli - generated images, used as experimental stimuli, organized by date of experiment. 
+  * Figures directory: output figures from model-fitting etc., organized by date the figure was generated
 
-TODO auto-generated datestrings for figures
+# TODO list
 
-# Suggestion 5: Organize scripts by date when you want old version to be frozen
-
-TODO sort your scripts by date, especially if you want a snapshot that you don't intend to change again
-
-# Suggestion 6: Use camelCase for your functions and variables, instead of nocapitals or underscore_separation
-
-TODO
+  * Finish this README
+  * Convert all dates to filenames, not folders (except figs)
+  * Finish the wiki suggestions documentation
+  * Update the pointers to suggestions that are scattered throughout this code

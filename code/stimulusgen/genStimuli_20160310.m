@@ -41,5 +41,6 @@ stimuli.notes = 'Fake stimuli for a github demo authored in March 2016; random n
 % Suggestion : "Use relative paths with a 'rootpath' script"
 
 % Save stimuli
-stimdir = fullfile(rootpath, 'data', 'stimuli'); if ~exist(stimdir,'dir'), mkdir(stimdir), end;
+stimdir = fullfile(exampleProjectRootpath, 'data', 'stimuli');
+if ~exist(stimdir,'dir'), mkdir(stimdir), end;
 save(fullfile(stimdir, 'stimuli_20160310.mat'), 'stimuli');

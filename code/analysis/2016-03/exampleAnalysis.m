@@ -3,10 +3,10 @@
 % If the data doesn't exist yet, create it
 % (Note: This section would not exist in a non-demo environment, because
 %  all the stimuli and responses would have been collected experimentally)
-stimFile = fullfile(rootpath, 'data', 'stimuli', 'stimuli_20160310.mat');
+stimFile = fullfile(exampleProjectRootpath, 'data', 'stimuli', 'stimuli_20160310.mat');
 if ~exist(stimFile, 'file'); genStimuli_20160310; end
 
-respFile = fullfile(rootpath, 'data', 'responses', 'responses_20160310.mat');
+respFile = fullfile(exampleProjectRootpath, 'data', 'responses', 'responses_20160310.mat');
 if ~exist(respFile, 'file'); genResponses_20160310; end
 
 % Load the data
@@ -34,7 +34,7 @@ xlabel('Contrast level'), ylabel('Response amplitude')
 
 %% Save the figure in a date-specific folder earmarked with *today*'s date
 disp('Saving figure');
-figDir = fullfile(rootpath, 'figs', datestr(now,'yyyy-mm-dd'));
+figDir = fullfile(exampleProjectRootpath, 'figs', datestr(now,'yyyy-mm-dd'));
 if ~exist(figDir, 'dir'); mkdir(figDir); end
 
 saveas(gcf,fullfile(figDir,'exampleModelFit.png'));
@@ -50,7 +50,7 @@ modelFit.todaysDate = datestr(now,'yyyy-mm-dd');
 modelFit.note = ['Example model fit to check the suitability of', ...
     'an exponential model for relating contrast levels to responses'];
 
-fitsDir = fullfile(rootpath, 'data', 'modelfits', datestr(now,'yyyy-mm-dd'));
+fitsDir = fullfile(exampleProjectRootpath, 'data', 'modelfits', datestr(now,'yyyy-mm-dd'));
 if ~exist(fitsDir, 'dir'); mkdir(fitsDir); end
 save(fullfile(fitsDir, 'expModelFit.mat'), 'modelFit');
 
