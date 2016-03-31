@@ -4,15 +4,13 @@ This is a demo repository, showing an example directory layout, best practices
 for managing files, and a few tricks for keeping your project
 organization sane and manageable. The following sections demonstrate best practices for writing and styling a README, as though this were a real project.
 
+The Winawerlab wiki has a companion page to this repository, which explains in more detail the coding best practices that are demonstrated here: https://wikis.nyu.edu/display/winawerlab/Coding+Style+and+Organization
+
 # Summary
 
 ExampleProject is a simulated contrast perception study.
 
 Simulated subjects were shown random noise at different contrasts. Subjects responded with a numerical measure of perceived contrast. Behavioral responses are fit with an exponential nonlinear model, with a gain and an exponent. The fit model parameters are saved.
-
-# Project Page on WinawerLab wiki
-
-The following wiki page is the companion to this repository: https://wikis.nyu.edu/display/winawerlab/Coding+Style+and+Organization
 
 # How to run this code
 
