@@ -1,15 +1,19 @@
 % GENERATE RESPONSES - Generate fake responses for a hypothetical experiment
 
+% Load the generated stimuli, so that we can use the correct contrast
+% values to generate our fake data
+stimDir = fullfile(exampleProjectRootpath, 'data', 'stimuli');
+load(fullfile(stimDir, '20160310_stimuli.mat'), 'stimuli');
+
 % Construct demo responses
 % (In real life, we would have gathered these from an experiment)
 errstd = 0.1;
-seed = 10; rng(seed);
-responses = 3 * [0.125, 0.25, 0.5, 0.75].^2 + errstd*randn(1,4);
+responses = 3 * stimuli.contrasts.^2 + errstd*randn(1,4);
     % User's response is assumed to be some transformation of the contrast
 
 % Save responses
-respdir = fullfile(exampleProjectRootpath, 'data', 'responses');
-if ~exist(respdir,'dir'), mkdir(respdir), end;
-save(fullfile(respdir, 'responses_20160310.mat'), 'responses');
+respDir = fullfile(exampleProjectRootpath, 'data', 'responses');
+if ~exist(respDir,'dir'), mkdir(respDir), end;
+save(fullfile(respDir, '20160310_responses.mat'), 'responses');
 
-% Ideally, you could save metadata with your responses as well
+% NOTE: Ideally, you could save metadata with your responses as well
